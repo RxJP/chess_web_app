@@ -1,0 +1,5 @@
+[default]
+template_dir = "templates"
+address = "0.0.0.0"
+port = 1234
+secret_key = "+76X1E73rqUKVAI8H4/Drv7gmFvVl74sbf5EzuJPKZQ="

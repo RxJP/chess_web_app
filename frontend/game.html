@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChessDojo</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/game.css">
+    <script>
+        const userData = {
+            is_authenticated: {{is_authenticated}},
+            username: "{{username}}",
+            rating: Number("{{rating}}"),
+            is_bot_play: {{is_bot_play}},
+        };
+    </script>
+    <script src="js/game.js"></script>
+    <script src="js/ws_game_handler.js"></script>
+</head>
+<body>
+<div class="main-container">
+    <header class="header">
+        <div class="header-left">Chess Dojo</div>
+        <div class="header-center">
+            Rating: {{rating}}
+            <!--                <img src="images/another2-removebg-small.png" alt="Logo">-->
+        </div>
+        <button id="account-button" class="header-right">{{username}}</button>
+    </header>
+    <div class="drop-down-menu" id="drop-down-menu">
+        <button id="log-out-button">Log Out</button>
+    </div>
+
+    <div class="container">
+        <div class="chessboard-container">
+            <div class="player-info">
+                <div class="player-name">{{opp_username}}</div>
+                <div class="player-time" id="opp-player-time"></div>
+            </div>
+            <img id="chessboard" src="svgs/chessboard.svg" alt="Chessboard">
+            <div id="pieces-container"></div>
+            <div class="player-info">
+                <div class="player-name">{{username}}</div>
+                <div class="player-time" id="player-time"></div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="exit-queue-button">Exit Game</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

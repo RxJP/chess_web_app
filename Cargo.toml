@@ -1,0 +1,20 @@
+[package]
+name = "chess_web_app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5.1", features = ["secrets", "json"] }
+rocket_dyn_templates = { version = "0.2.0", features = ["tera"] }
+sha2 = "0.10.8"
+base64 = "0.22.0"
+serde = { version = "1.0.216", features = ["derive"] }
+serde_json = "1.0.134"
+chess = "3.2.0"
+rocket_ws = "0.1.1"
+tokio = { version = "1.42.0", features = ["process"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"
